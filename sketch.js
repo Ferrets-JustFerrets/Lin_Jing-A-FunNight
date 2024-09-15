@@ -10,6 +10,7 @@ let d;
 let headerOne;
 
 let pageTwoImage;
+let rectAlpha = 1; //SYD: I made this a global variable so I can change it in the pageTwo function, this is for your fade in transition
 
 function preload(){
   pageTwoImage = loadImage('Images/bar.jpg');
@@ -90,7 +91,6 @@ function homePage(){
 function mousePressed(){
   if(d < buttonW/2 && d < buttonH/2){
     homePageOn = false;
-
     
   }
 
@@ -123,7 +123,34 @@ function pageTwo(){
   text("It's late and you're drunk, bar's closing soon", width/2, height/1.1);
 
   //Phone choice button
+  let buttonS = height*0.03;
+  let buttonX = width*0.1;
+  let buttonY = buttonS/2 + 15; 
+
   noStroke();
   fill(189, 18, 44);
-  ellipse(width/0.5, height/0.5, 2, 100, 100);
+
+  //SYD: in order to click on your button you need to repeat what we did with the start button (hint: use dist function)
+  // look at dist function in your home page and look at what we wrote in the mousePressed function
+
+  //SYD: The reason your ellispse wasn't showing up is you had an extra number there that shouldn't be there
+  ellipse(buttonX, buttonY, buttonS, buttonS); //SYD: I created a variable called buttonS
+
+  //SYD: Adding a second circle next to the other circle, using the same variables to make the code more readable
+  ellipse(width/2, buttonY, buttonS, buttonS);
+
+  ellipse(width*0.9, buttonY, buttonS, buttonS);
+
+  //SYD: Add the illusion of a fade in transition by changing the alpha value of a black rectangle
+  fill(0, 0, 0, rectAlpha); // Made rectAlpha a global variable so I can start it at 1 and change it to 0 gradually
+  rect(width/2, height/2, width, height); 
+
+  //"animate" the fade in transition by decreasing the alpha value of the rectangle
+  rectAlpha -= 0.01;
+
+  //For optimization, make sure the alpha value stops moving
+  if(rectAlpha <= 0){ //once it reaches 0, stop changing the alpha value
+    rectAlpha = 0;
+  }
+
 }
