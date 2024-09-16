@@ -7,6 +7,7 @@ let pageTwoOn = true;
 let pageThreeOn = true;
 
 let buttonW, buttonH, buttonX, buttonY; 
+let imageX, imageY, imageW, imageH;
 let d;
 
 let headerOne;
@@ -40,6 +41,11 @@ function setup() {
   buttonH = height*0.1;
   buttonX = width/2;
   buttonY = height/1.7;
+
+  imageX = width/2;
+  imageY = height/2;
+  imageW = width*0.9;
+  imageH = height*0.91;
  
 }
 
@@ -133,6 +139,8 @@ function pageTwo(){
   fill(189, 18, 44);
   ellipse(buttonX, buttonY*0.99, buttonS, buttonS);
   image(phoneButton, width*0.1, height*0.03, width*0.04, height*0.05);
+  
+  d = dist(mouseX, mouseY, buttonX, buttonY);
 
   //SYD: in order to click on your button you need to repeat what we did with the start button (hint: use dist function)
   // look at dist function in your home page and look at what we wrote in the mousePressed function
@@ -155,7 +163,7 @@ function pageTwo(){
   rect(width/2, height/2, width, height); 
   image(keysButton, width*0.9, height*0.03, width*0.02, height*0.029);
 
-  d = dist(mouseX, mouseY, buttonX, buttonY);
+  d = dist(mouseX, mouseY, imageX, imageY,imageW, imageH);
 
   //"animate" the fade in transition by decreasing the alpha value of the rectangle
   rectAlpha -= 0.01;
