@@ -6,7 +6,10 @@ let homePageOn = true;
 let pageTwoOn = true;
 let pageThreeOn = true;
 
-let buttonW, buttonH, buttonX, buttonY; 
+let buttonW, buttonH, buttonX, buttonY;
+let buttonW2, buttonH2, buttonX2, buttonY2;
+let buttonW3, buttonH3, buttonX3, buttonY3;
+let buttonW4, buttonH4, buttonX4, buttonY4;
 let imageX, imageY, imageW, imageH;
 let d;
 
@@ -55,9 +58,11 @@ function draw() {
 
   if(homePageOn){
     homePage();
-  } else {
+  } else if (pageTwoOn) {
     headerOne.style('display', 'none');
     pageTwo();
+  } else {
+    pageThree();
   }
 }
 
@@ -97,11 +102,18 @@ function homePage(){
 function mousePressed(){
   if(d < buttonW/2 && d < buttonH/2){
     homePageOn = false;
-  }
-
- 
-  if (d<buttonW/2 && d<buttonH/2){
-    pageTwoOn = false;
+    pageTwoOn = true;
+  }else if (pageTwoOn) {
+    if (d<buttonW/2 && d<buttonH/2){
+      pageTwoOn = false;
+      pageFourOn = true;
+    } else if (d<buttonW/2 && d<buttonH/2){
+      pageTwoOn = false;
+      pageFourOn = true;
+    } else if (d<buttonW/2 && d<buttonH/2){
+      pageTwoOn= false;
+      pageThreeOn = true;
+    }
   }
 }
 
