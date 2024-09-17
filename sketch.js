@@ -99,6 +99,7 @@ function mousePressed(){
     homePageOn = false;
   }
 
+ 
   if (d<buttonW/2 && d<buttonH/2){
     pageTwoOn = false;
   }
@@ -173,20 +174,21 @@ function pageTwo(){
     rectAlpha = 0;
   }
 
-  function pageThree() {
-      //Background
+}  
+function pageThree() {
+  //Background
   background(50);
   rectMode(CENTER);
   let rectW = width*0.9;
   let rectH = height*0.9; 
   noStroke();
   rect(width/2, height/2, rectW*0.5, rectH*0.5);
-  
+
   //rectangle
   noStroke();
   fill(13,30, 88, 0.60);
   rect(width/2.0, height/1.10, width*0.50, height*0.10);
-  
+
   //Bar text
   textAlign(CENTER, CENTER);
   textSize(height*0.05)
@@ -196,49 +198,58 @@ function pageTwo(){
 
   //Image---
   image(pageThreeImage, width/2, height/2, width*0.9, height*0.91);
-  }
 
-  function pageFour() {
-    background(50);
-    rectMode(CENTER);
-    let rectW = width*0.9;
-    let rectH = height*0.9; 
-    noStroke();
-    rect(width/2, height/2, rectW*0.5, rectH*0.5);
-    
-    //rectangle
-    noStroke();
-    fill(13,30, 88, 0.60);
-    rect(width/2.0, height/1.10, width*0.50, height*0.10);
+  //next button rectangle
+   noStroke();
+   fill(13,30, 88, 0.60);
+   rect(width/2.0, height/1.0, width*0.30, height*0.10);
+}
 
-    //Bar text
-    textAlign(CENTER, CENTER);
-    textSize(height*0.05)
-    stroke(0);
-    fill(0, 0, 0);
-    text("You got home safely", width/2, height/1.1);
-
-    //Image---
-    image(pageFourImage, width/2, height/2, width*0.9, height*0.91);
-    }
-  
-  function pageFive()
-  {
+function pageFour() {
   background(50);
   rectMode(CENTER);
   let rectW = width*0.9;
   let rectH = height*0.9; 
   noStroke();
   rect(width/2, height/2, rectW*0.5, rectH*0.5);
- 
-    //Bar text
-    textAlign(CENTER, CENTER);
-    textSize(height*0.05)
-    stroke(0);
-    fill(0, 0, 0);
-    text("Always Remember, NEVER drink and drive", width/2, height/1.1);
 
-     //Return BUTTON -----------------------------
+  //rectangle
+  noStroke();
+  fill(13,30, 88, 0.60);
+  rect(width/2.0, height/1.10, width*0.50, height*0.10);
+
+  //Bar text
+  textAlign(CENTER, CENTER);
+  textSize(height*0.05)
+  stroke(0);
+  fill(0, 0, 0);
+  text("You got home safely", width/2, height/1.1);
+
+  //Image---
+  image(pageFourImage, width/2, height/2, width*0.9, height*0.91);
+
+  //next button rectangle
+   noStroke();
+   fill(13,30, 88, 0.60);
+   rect(width/2.0, height/1.0, width*0.30, height*0.10);
+}
+
+function pageFive(){
+  background(50);
+  rectMode(CENTER);
+  let rectW = width*0.9;
+  let rectH = height*0.9; 
+  noStroke();
+  rect(width/2, height/2, rectW*0.5, rectH*0.5);
+
+  //Bar text
+  textAlign(CENTER, CENTER);
+  textSize(height*0.05)
+  stroke(0);
+  fill(0, 0, 0);
+  text("Always Remember, NEVER drink and drive", width/2, height/1.1);
+
+  //Return BUTTON -----------------------------
   noStroke();
   fill(189, 18, 44);
   rect(buttonX, buttonY, buttonW, buttonH, height*0.04);
@@ -250,5 +261,4 @@ function pageTwo(){
   text("Start Over?", width/2, height/1.7);
 
   d = dist(mouseX, mouseY, buttonX, buttonY);
-  }
 }
