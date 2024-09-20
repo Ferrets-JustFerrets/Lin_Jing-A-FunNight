@@ -20,8 +20,8 @@ let phoneButton, taxiButton, keysButton;
 let rectAlpha = 1; //SYD: I made this a global variable so I can change it in the pageTwo function, this is for your fade in transition
 
 function preload(){
-  pageTwoImage = loadImage('Images/bar.jpg');
-  pageThreeImage = loadImage('Images/bedRoom.jpg');
+  pageTwoImage = loadImage('Images/bar.png');
+  pageThreeImage = loadImage('Images/bedRoom.png');
   pageFourImage = loadImage('Images/carCrash.jpg');
   phoneButton = loadImage('Images/phone.png');
   taxiButton = loadImage('Images/taxiIcon.png');
@@ -100,6 +100,8 @@ function homePage(){
 
 
 function mousePressed(){
+  console.log(d, buttonW/2, buttonH/2);
+
   if(d < buttonW/2 && d < buttonH/2){
     homePageOn = false;
     pageTwoOn = true;
@@ -143,15 +145,15 @@ function pageTwo(){
   text("It's late and you're drunk, bar's closing soon", width/2, height/1.1);
 
   //Buttons for Phone/Taxi/Keys
-  let buttonS = height*0.04;
-  let buttonX = width*0.1;
-  let buttonY = buttonS/2 + 13; 
+    buttonS = height*0.05;
+    buttonX = width*0.1;
+    buttonY = height*0.04; 
 
   
   noStroke();
-  fill(189, 18, 44);
-  ellipse(buttonX, buttonY*0.99, buttonS, buttonS);
-  image(phoneButton, width*0.1, height*0.03, width*0.04, height*0.05);
+  // fill(189, 18, 44);
+  // ellipse(buttonX, buttonY*0.99, buttonS, buttonS);
+  image(phoneButton, width*0.1, height*0.04, width*0.04, height*0.05);
   
   d = dist(mouseX, mouseY, buttonX, buttonY);
 
@@ -163,18 +165,18 @@ function pageTwo(){
 
   //SYD: Adding a second circle next to the other circle, using the same variables to make the code more readable
   noStroke();
-  fill(11, 50, 91);
-  ellipse(width/2, buttonY*0.99, buttonS, buttonS);
-  image(taxiButton, width*0.5, height*0.03, width*0.02, height*0.03);
+  // fill(11, 50, 91);
+  // ellipse(width/2, buttonY*0.99, buttonS, buttonS);
+  image(taxiButton, width*0.5, height*0.04, width*0.04, height*0.05);
 
   noStroke();
-  fill(4, 29, 84);
-  ellipse(width*0.9, buttonY*0.99, buttonS, buttonS);
+  // fill(4, 29, 84);
+  // ellipse(width*0.9, buttonY*0.99, buttonS, buttonS);
 
   //SYD: Add the illusion of a fade in transition by changing the alpha value of a black rectangle
   fill(0, 0, 0, rectAlpha); // Made rectAlpha a global variable so I can start it at 1 and change it to 0 gradually
   rect(width/2, height/2, width, height); 
-  image(keysButton, width*0.9, height*0.03, width*0.02, height*0.029);
+  image(keysButton, width*0.9, height*0.04, width*0.04, height*0.05);
 
   d = dist(mouseX, mouseY, imageX, imageY,imageW, imageH);
 
@@ -187,90 +189,90 @@ function pageTwo(){
   }
 
 }  
-function pageThree() {
-  //Background
-  background(50);
-  rectMode(CENTER);
-  let rectW = width*0.9;
-  let rectH = height*0.9; 
-  noStroke();
-  rect(width/2, height/2, rectW*0.5, rectH*0.5);
+// function pageThree() {
+//   //Background
+//   background(50);
+//   rectMode(CENTER);
+//   let rectW = width*0.9;
+//   let rectH = height*0.9; 
+//   noStroke();
+//   rect(width/2, height/2, rectW*0.5, rectH*0.5);
 
-  //rectangle
-  noStroke();
-  fill(13,30, 88, 0.60);
-  rect(width/2.0, height/1.10, width*0.50, height*0.10);
+//   //rectangle
+//   noStroke();
+//   fill(13,30, 88, 0.60);
+//   rect(width/2.0, height/1.10, width*0.50, height*0.10);
 
-  //Bar text
-  textAlign(CENTER, CENTER);
-  textSize(height*0.05)
-  stroke(0);
-  fill(0, 0, 0);
-  text("You went drunk driving and got killed in a car crash", width/2, height/1.1);
+//   //Bar text
+//   textAlign(CENTER, CENTER);
+//   textSize(height*0.05)
+//   stroke(0);
+//   fill(0, 0, 0);
+//   text("You went drunk driving and got killed in a car crash", width/2, height/1.1);
 
-  //Image---
-  image(pageThreeImage, width/2, height/2, width*0.9, height*0.91);
+//   //Image---
+//   image(pageThreeImage, width/2, height/2, width*0.9, height*0.91);
 
-  //next button rectangle
-   noStroke();
-   fill(13,30, 88, 0.60);
-   rect(width/2.0, height/1.0, width*0.30, height*0.10);
-}
+//   //next button rectangle
+//    noStroke();
+//    fill(13,30, 88, 0.60);
+//    rect(width/2.0, height/1.0, width*0.30, height*0.10);
+// }
 
-function pageFour() {
-  background(50);
-  rectMode(CENTER);
-  let rectW = width*0.9;
-  let rectH = height*0.9; 
-  noStroke();
-  rect(width/2, height/2, rectW*0.5, rectH*0.5);
+// function pageFour() {
+//   background(50);
+//   rectMode(CENTER);
+//   let rectW = width*0.9;
+//   let rectH = height*0.9; 
+//   noStroke();
+//   rect(width/2, height/2, rectW*0.5, rectH*0.5);
 
-  //rectangle
-  noStroke();
-  fill(13,30, 88, 0.60);
-  rect(width/2.0, height/1.10, width*0.50, height*0.10);
+//   //rectangle
+//   noStroke();
+//   fill(13,30, 88, 0.60);
+//   rect(width/2.0, height/1.10, width*0.50, height*0.10);
 
-  //Bar text
-  textAlign(CENTER, CENTER);
-  textSize(height*0.05)
-  stroke(0);
-  fill(0, 0, 0);
-  text("You got home safely", width/2, height/1.1);
+//   //Bar text
+//   textAlign(CENTER, CENTER);
+//   textSize(height*0.05)
+//   stroke(0);
+//   fill(0, 0, 0);
+//   text("You got home safely", width/2, height/1.1);
 
-  //Image---
-  image(pageFourImage, width/2, height/2, width*0.9, height*0.91);
+//   //Image---
+//   image(pageFourImage, width/2, height/2, width*0.9, height*0.91);
 
-  //next button rectangle
-   noStroke();
-   fill(13,30, 88, 0.60);
-   rect(width/2.0, height/1.0, width*0.30, height*0.10);
-}
+//   //next button rectangle
+//    noStroke();
+//    fill(13,30, 88, 0.60);
+//    rect(width/2.0, height/1.0, width*0.30, height*0.10);
+// }
 
-function pageFive(){
-  background(50);
-  rectMode(CENTER);
-  let rectW = width*0.9;
-  let rectH = height*0.9; 
-  noStroke();
-  rect(width/2, height/2, rectW*0.5, rectH*0.5);
+// function pageFive(){
+//   background(50);
+//   rectMode(CENTER);
+//   let rectW = width*0.9;
+//   let rectH = height*0.9; 
+//   noStroke();
+//   rect(width/2, height/2, rectW*0.5, rectH*0.5);
 
-  //Bar text
-  textAlign(CENTER, CENTER);
-  textSize(height*0.05)
-  stroke(0);
-  fill(0, 0, 0);
-  text("Always Remember, NEVER drink and drive", width/2, height/1.1);
+//   //Bar text
+//   textAlign(CENTER, CENTER);
+//   textSize(height*0.05)
+//   stroke(0);
+//   fill(0, 0, 0);
+//   text("Always Remember, NEVER drink and drive", width/2, height/1.1);
 
-  //Return BUTTON -----------------------------
-  noStroke();
-  fill(189, 18, 44);
-  rect(buttonX, buttonY, buttonW, buttonH, height*0.04);
+//   //Return BUTTON -----------------------------
+//   noStroke();
+//   fill(189, 18, 44);
+//   rect(buttonX, buttonY, buttonW, buttonH, height*0.04);
 
-  textAlign(CENTER, CENTER);
-  textSize(height*0.05)
-  stroke(0);
-  fill(0, 0, 100);
-  text("Start Over?", width/2, height/1.7);
+//   textAlign(CENTER, CENTER);
+//   textSize(height*0.05)
+//   stroke(0);
+//   fill(0, 0, 100);
+//   text("Start Over?", width/2, height/1.7);
 
-  d = dist(mouseX, mouseY, buttonX, buttonY);
-}
+//   d = dist(mouseX, mouseY, buttonX, buttonY);
+// }
