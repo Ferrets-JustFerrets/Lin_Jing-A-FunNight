@@ -213,33 +213,23 @@ function pageThree() {
   fill(0, 0, 0);
   text("You got home safely", width / 2, height / 1.1);
 
-  //Buttons for Phone/Taxi/Keys
-  buttonS = height * 0.05;
-  buttonX = width * 0.1;
-  buttonY = height * 0.04;
+  //Buttons for next button
+  buttonX4 = width * 0.9;
+  buttonY4 = height * 0.04;
 
-  buttonX2 = width * 0.5;
-  buttonY2 = height * 0.04;
-
-  buttonX3 = width * 0.9;
-  buttonY3 = height * 0.04;
-
+  // next button and distance calutation
   noStroke();
-  // phone button and distance calutation
-  image(phoneButton, width * 0.1, height * 0.04, width * 0.04, height * 0.05);
-  d = dist(mouseX, mouseY, buttonX, buttonY);
+  fill(189, 18, 44);
+  rect(width / 2, height / 10, buttonW * 0.5, buttonH * 1, height * 0.04);
+  d4 = dist(mouseX, mouseY, buttonX4, buttonY4);
 
-  // taxi button and distance calutation
-  image(taxiButton, width * 0.5, height * 0.04, width * 0.04, height * 0.05);
-  d2 = dist(mouseX, mouseY, buttonX2, buttonY2);
-
-  // keys button and distance calutation
-  image(keysButton, width * 0.9, height * 0.04, width * 0.04, height * 0.05);
-  d3 = dist(mouseX, mouseY, buttonX3, buttonY3);
-
-  // Rect Alhpa
-  fill(0, 0, 0, rectAlpha);
-  rect(width / 2, height / 2, width, height);
+   //Next text
+   textAlign(CENTER, CENTER);
+   textSize(height * 0.05);
+   stroke(0);
+   fill(0, 0, 100);
+   text("Next", width / 2, height / 9);
+   
 
   rectAlpha -= 0.01;
 
@@ -279,8 +269,15 @@ function pageFour() {
   // next button and distance calutation
   noStroke();
   fill(189, 18, 44);
-  rect(width / 2, height / 4.5, buttonW * 0.5, buttonH * 1, height * 0.04);
+  rect(width / 2, height / 10, buttonW * 0.5, buttonH * 1, height * 0.04);
   d4 = dist(mouseX, mouseY, buttonX4, buttonY4);
+
+   //Next text
+   textAlign(CENTER, CENTER);
+   textSize(height * 0.05);
+   stroke(0);
+   fill(0, 0, 100);
+   text("Next", width / 2, height / 9);
 
   // Rect Alhpa
   fill(0, 0, 0, rectAlpha);
