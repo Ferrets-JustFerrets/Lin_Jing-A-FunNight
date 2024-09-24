@@ -18,7 +18,8 @@ let headerOne;
 
 let pageTwoImage, pageThreeImage, pageFourImage;
 let phoneButton, taxiButton, keysButton;
-let rectAlpha = 1; //SYD: I made this a global variable so I can change it in the pageTwo function, this is for your fade in transition
+let beercansImage,cellphoneImage;
+let rectAlpha = 1; 
 
 function preload() {
   pageTwoImage = loadImage("Images/bar.png");
@@ -27,6 +28,8 @@ function preload() {
   phoneButton = loadImage("Images/phone.png");
   taxiButton = loadImage("Images/taxiIcon.png");
   keysButton = loadImage("Images/keyIcon.png");
+  beercansImage = loadImage("Images/beercans.png");
+  cellphoneImage = loadImage("Images/cellphone.png");
 }
 
 function setup() {
@@ -86,6 +89,7 @@ function homePage() {
   noStroke();
   rect(width / 2, height / 2, rectW, rectH);
 
+
   //START BUTTON -----------------------------
   noStroke();
   fill(189, 18, 44);
@@ -98,6 +102,11 @@ function homePage() {
   text("START", width / 2, height / 1.7);
 
   d = dist(mouseX, mouseY, buttonX, buttonY);
+
+    //phone image
+    image(cellphoneImage, width/5, height/2, width * 0.2, height * 0.4);
+    //beercans image
+    image(beercansImage, width/1.2, height/2, width * 0.2, height * 0.4);
 }
 
 function mousePressed() {
@@ -175,13 +184,12 @@ function pageTwo() {
   d2 = dist(mouseX, mouseY, buttonX2, buttonY2);
 
   // keys button and distance calutation
-  image(taxiButton, width * 0.5, height * 0.04, width * 0.04, height * 0.05);
+  image(keysButton, width * 0.9, height * 0.04, width * 0.04, height * 0.05);
   d3 = dist(mouseX, mouseY, buttonX3, buttonY3);
 
   // Rect Alhpa
   fill(0, 0, 0, rectAlpha);
   rect(width / 2, height / 2, width, height);
-  image(keysButton, width * 0.9, height * 0.04, width * 0.04, height * 0.05);
 
   rectAlpha -= 0.01;
 
@@ -231,11 +239,15 @@ function pageThree() {
    text("Next", width / 2, height / 9);
    
 
-  rectAlpha -= 0.01;
+ // Rect Alhpa
+ fill(0, 0, 0, rectAlpha);
+ rect(width / 2, height / 2, width, height);
 
-  if (rectAlpha <= 0) {
-    rectAlpha = 0;
-  }
+ rectAlpha -= 0.01;
+
+ if (rectAlpha <= 0) {
+   rectAlpha = 0;
+ }
 }
 
 function pageFour() {
@@ -283,11 +295,15 @@ function pageFour() {
   fill(0, 0, 0, rectAlpha);
   rect(width / 2, height / 2, width, height);
 
-  rectAlpha -= 0.01;
+ // Rect Alhpa
+ fill(0, 0, 0, rectAlpha);
+ rect(width / 2, height / 2, width, height);
 
-  if (rectAlpha <= 0) {
-    rectAlpha = 0;
-  }
+ rectAlpha -= 0.01;
+
+ if (rectAlpha <= 0) {
+   rectAlpha = 0;
+ }
 }
 
 function pageFive() {
@@ -324,8 +340,14 @@ function pageFive() {
   text("Start Over?", width / 2, height / 1.7);
 
   d = dist(mouseX, mouseY, buttonX, buttonY);
+ 
+  // Rect Alhpa
+ fill(0, 0, 0, rectAlpha);
+ rect(width / 2, height / 2, width, height);
 
-  if (rectAlpha <= 0) {
-    rectAlpha = 0;
-  }
+ rectAlpha -= 0.01;
+
+ if (rectAlpha <= 0) {
+   rectAlpha = 0;
+ }
 }
