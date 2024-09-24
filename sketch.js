@@ -27,7 +27,7 @@ function preload() {
   pageFourImage = loadImage("Images/carCrash.jpg");
   phoneButton = loadImage("Images/phone.png");
   taxiButton = loadImage("Images/taxiIcon.png");
-  keysButton = loadImage("Images/keyIcon.png");
+  keysButton = loadImage("Images/KeyIcon.png");
   beercansImage = loadImage("Images/beercans.png");
   cellphoneImage = loadImage("Images/cellphone.png");
 }
